@@ -284,8 +284,63 @@ uikfmdjxuzlbgnrotcepvsvaqc
 
 # print(totalDoub * totalTrip)
 
-
 # Challenge 2
+# turns data into usable list
+listdata = data.splitlines()
+two_strings = []
+# loops through entirety of listdata
+for i in listdata:
+    # s1 equals the current string
+    s1 = i
+    # setting index to loop though each word in list
+    index = 1
+    # Will execute until it reaches end of list each time
+    while index < len(listdata) and len(two_strings) < 2:
+        # s2 is being set to the first item in the list
+        s2 = listdata[index]
+        # length of first string 
+        s1_len = len(s1)
+        # length of second string 
+        s2_len = len(s2)
+        # keep track of string indexes
+        a = 0
+        b=0
+        # keep track of changes 
+        count = 0
+        # will loop until the end of the string is reached 
+        while a<s1_len and b<s2_len and count <=1:
+            # if letters are not equal, add to the count 
+            if s1[a] != s2[b]:
+                count+=1
+            else:
+                pass
+            # adding to trackers
+            a+=1
+            b+=1
+        # if there is only one difference, put the two strings in a list
+        if count == 1:
+            two_strings.append(s1)
+            two_strings.append(s2)
+        else:
+            pass
+        # used to make sure the 1st while loop stops
+        index+=1
+# used to see the two strings
+print(two_strings)
+
+string1 = two_strings[0]
+string2 = two_strings[1]
+similar = ''
+i = 0
+for a in string1:
+    if a == string2[i]:
+        similar += a
+    else:
+        pass
+    i+=1
+print(similar)
+        
+# NOTE - Once a number loops thought the whole list, the next number only needs to start looping at its index +1
 
 
 
